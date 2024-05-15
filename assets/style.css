@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: "Poetsen One", sans-serif;
+}
+
+#root{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 2fr 10fr 1fr;
+    grid-template-areas: 
+        "aside"
+        "nav"
+        "main"
+        "footer"
+    ;
+}
+aside{
+    background:  #ecf1f5;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: aside;
+}
+nav{
+display: flex;
+flex-direction: column;
+background: #72bbf8;
+color:#fff;
+padding-left: 1px;
+grid-area: nav;
+}
+
+main{
+    padding: 1rem;
+    min-height: calc(100vh - 104px);
+    grid-area: main; 
+}
+.cartas{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 7px;
+}
+.cartas div{
+    margin: 5px;
+    width: 360px;
+    height: 360px;
+    border: 1px solid rgb(189, 189, 189);
+}
+.cartas div img{
+    object-fit: cover;
+    width: 77%;
+    height: 290px;
+    padding-left: 54px;
+    padding-top: 11px;
+}
+p{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    font-size: 20px;
+    font-weight: lighter;
+    background:  #044478;
+    text-decoration: none;
+    color: #FFF;
+    height: 39px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navegacion{
+    display: flex;
+    margin-top: 106px;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+    gap:1.2rem;
+}
+h1{
+    text-align: center;
+}
+
+.footer{
+    display:flex;
+    background: #044478;
+    text-align: center;
+    height: 180px;
+    margin-top: 335px;
+    color: #fff;
+}
+.pie{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+
+@media screen and (min-width: 576px){
+    #root{
+        display:grid;
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-areas: 
+            "nav"
+            "aside"
+            "main"
+            "footer"
+        ;
+}
+.cartas{
+    grid-template-columns: 3fr;
+    
+}
+}
+
+@media screen and (min-width: 992px){
+    #root{
+        grid-template-columns: 20% 80%;
+        grid-template-areas: 
+            "nav aside"
+            "nav main"
+            "nav main"
+            ;
+        
+    }
+.cartas{
+    grid-template-columns: auto auto auto auto;
+}
+    }
